@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -7,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
 
-            // Animate hamburger icon
+
             const icon = hamburger.querySelector('i');
             if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth Scrolling for Anchor Links
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
@@ -28,15 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 e.preventDefault();
-                navLinks.classList.remove('active'); // Close menu on click
-                // Reset hamburger icon
+                navLinks.classList.remove('active'); 
+ 
                 if (hamburger) {
                     const icon = hamburger.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
 
-                const headerOffset = 80; // Height of fixed header
+                const headerOffset = 80; 
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -48,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fade In Animation on Scroll
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -59,19 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Only animate once
+                observer.unobserve(entry.target); 
             }
         });
     }, observerOptions);
 
-    // Select elements to animate
+
     const sections = document.querySelectorAll('section, .hero-content, .hero-image, .course-card, .feature-card');
     sections.forEach(section => {
         section.classList.add('fade-in-section');
         observer.observe(section);
     });
 
-    // Navbar Background on Scroll
+
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -81,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Tab Switching (for Course Detail page)
+
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -89,41 +88,36 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const targetTab = button.getAttribute('data-tab');
 
-            // Remove active class from all buttons and contents
+
             tabButtons.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
 
-            // Add active class to clicked button and corresponding content
+
             button.classList.add('active');
             document.getElementById(targetTab).classList.add('active');
         });
     });
-
-    // FAQ Accordion (for Contact page)
     const faqItems = document.querySelectorAll('.faq-item');
 
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
 
         question.addEventListener('click', () => {
-            // Close all other items
+ 
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.classList.remove('active');
                 }
             });
 
-            // Toggle current item
+
             item.classList.toggle('active');
         });
     });
-
-    // Login/Register Toggle (for Login page)
     const showRegister = document.getElementById('show-register');
     const showLogin = document.getElementById('show-login');
     const loginBox = document.getElementById('login-box');
     const registerBox = document.getElementById('register-box');
-
     if (showRegister) {
         showRegister.addEventListener('click', (e) => {
             e.preventDefault();
@@ -131,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
             registerBox.classList.remove('hidden');
         });
     }
-
     if (showLogin) {
         showLogin.addEventListener('click', (e) => {
             e.preventDefault();
@@ -139,8 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
             loginBox.classList.remove('hidden');
         });
     }
-
-    // Contact Form Submission
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -149,8 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
-
-    // Auth Forms Submission
     const authForms = document.querySelectorAll('.auth-form');
     authForms.forEach(form => {
         form.addEventListener('submit', (e) => {

@@ -1,7 +1,4 @@
-/* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-/* Variables */
 :root {
     --primary-color: #ff6b6b;
     --primary-dark: #ee5253;
@@ -18,14 +15,11 @@
 
     --container-width: 1200px;
 }
-
-/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -49,14 +43,14 @@ img {
     display: block;
 }
 
-/* Container */
+
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Buttons */
+
 .btn-primary {
     display: inline-block;
     padding: 12px 30px;
@@ -104,7 +98,7 @@ img {
     color: white;
 }
 
-/* Navbar */
+
 .navbar {
     position: fixed;
     top: 20px;
@@ -224,7 +218,7 @@ img {
     color: var(--primary-color);
 }
 
-/* Hero Section */
+
 .hero {
     padding: 160px 0 100px;
     background: #1a2332;
@@ -233,7 +227,6 @@ img {
     overflow: hidden;
 }
 
-/* Hero Background Image */
 .hero-background {
     position: absolute;
     top: 0;
@@ -248,7 +241,6 @@ img {
     z-index: 0;
 }
 
-/* Dark Overlay */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -259,7 +251,6 @@ img {
     z-index: 1;
 }
 
-/* Animated Background Shapes */
 .hero-shapes {
     position: absolute;
     top: 0;
@@ -334,7 +325,7 @@ img {
     flex: 1;
 }
 
-/* Hero Badge */
+
 .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -399,8 +390,6 @@ img {
         transform: translateY(0);
     }
 }
-
-/* Enhanced Hero Buttons */
 .hero-buttons {
     display: flex;
     gap: 15px;
@@ -428,8 +417,6 @@ img {
 .hero-buttons .btn-secondary i {
     font-size: 1.2rem;
 }
-
-/* Stats Section */
 .stats {
     display: flex;
     gap: 50px;
@@ -467,8 +454,6 @@ img {
     font-size: 0.9rem;
     color: #94a3b8;
 }
-
-/* Hero Image */
 .hero-image {
     flex: 1;
     position: relative;
@@ -497,7 +482,7 @@ img {
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
-/* Floating Cards */
+
 .floating-card {
     position: absolute;
     display: flex;
@@ -545,8 +530,6 @@ img {
         transform: translateY(-15px);
     }
 }
-
-/* Features Section */
 .features {
     padding: 100px 0;
     background-color: white;
@@ -612,7 +595,6 @@ img {
     line-height: 1.7;
 }
 
-/* Courses Section */
 .courses {
     padding: 100px 0;
     background-color: var(--light-bg);
@@ -704,7 +686,6 @@ img {
     text-align: center;
 }
 
-/* Footer */
 .footer {
     background-color: var(--dark-bg);
     color: white;
@@ -777,7 +758,6 @@ img {
     font-size: 0.9rem;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
     .hero .container {
         flex-direction: column;
@@ -892,7 +872,6 @@ img {
     }
 }
 
-/* Animations */
 .fade-in-section {
     opacity: 0;
     transform: translateY(20px);
@@ -905,7 +884,7 @@ img {
     transform: none;
 }
 
-/* Page Header */
+
 .page-header {
     padding: 140px 0 60px;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -941,7 +920,7 @@ img {
     font-size: 1.1rem;
 }
 
-/* Courses Section */
+
 .courses-section {
     padding: 80px 0;
     background-color: var(--light-bg);
@@ -953,7 +932,6 @@ img {
     gap: 40px;
 }
 
-/* Filter Sidebar */
 .filter-sidebar {
     background: white;
     padding: 30px;
@@ -1052,7 +1030,6 @@ img {
     color: var(--text-muted);
 }
 
-/* Courses Main */
 .courses-main {
     min-height: 600px;
 }
@@ -1101,7 +1078,6 @@ img {
     margin-bottom: 40px;
 }
 
-/* Pagination */
 .pagination {
     display: flex;
     justify-content: center;
@@ -1136,8 +1112,6 @@ img {
     opacity: 0.5;
     cursor: not-allowed;
 }
-
-/* Responsive for Courses Page */
 @media (max-width: 992px) {
     .courses-layout {
         grid-template-columns: 1fr;
@@ -1159,8 +1133,6 @@ img {
         grid-template-columns: 1fr;
     }
 }
-
-/* Course Detail Header */
 .course-detail-header {
     padding: 140px 0 60px;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -1242,8 +1214,6 @@ img {
     font-weight: 600;
     color: white;
 }
-
-/* Course Detail Content */
 .course-detail-content {
     padding: 60px 0;
     background-color: var(--light-bg);
@@ -1294,8 +1264,6 @@ img {
     font-size: 2rem;
     margin-left: 5px;
 }
-
-/* Tabs */
 .course-tabs {
     display: flex;
     gap: 10px;
@@ -1386,8 +1354,6 @@ img {
     color: var(--text-muted);
     line-height: 1.7;
 }
-
-/* Curriculum */
 .curriculum-sections {
     display: flex;
     flex-direction: column;
@@ -1451,8 +1417,6 @@ img {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
-
-/* Instructor Detail */
 .instructor-detail {
     display: flex;
     gap: 30px;
@@ -1592,8 +1556,6 @@ img {
     color: var(--text-muted);
     line-height: 1.6;
 }
-
-/* Sidebar */
 .detail-sidebar {
     position: sticky;
     top: 100px;
@@ -1723,8 +1685,6 @@ img {
     color: white;
     border-color: var(--primary-color);
 }
-
-/* Related Courses */
 .related-courses {
     padding: 80px 0;
     background-color: white;
@@ -1736,8 +1696,6 @@ img {
     text-align: center;
     color: var(--text-dark);
 }
-
-/* Responsive for Course Detail */
 @media (max-width: 992px) {
     .detail-layout {
         grid-template-columns: 1fr;
@@ -1752,8 +1710,6 @@ img {
         text-align: center;
     }
 }
-
-/* Mission Section */
 .mission-section {
     padding: 80px 0;
     background-color: white;
@@ -1783,8 +1739,6 @@ img {
     border-radius: 20px;
     box-shadow: var(--card-shadow);
 }
-
-/* Stats Section */
 .stats-section {
     padding: 80px 0;
     background-color: var(--light-bg);
@@ -1835,8 +1789,6 @@ img {
     color: var(--text-muted);
     font-size: 1rem;
 }
-
-/* Story Section */
 .story-section {
     padding: 80px 0;
     background-color: white;
@@ -1905,8 +1857,6 @@ img {
     color: var(--text-muted);
     line-height: 1.7;
 }
-
-/* Team Section */
 .team-section {
     padding: 80px 0;
     background-color: var(--light-bg);
@@ -1918,20 +1868,17 @@ img {
     margin-bottom: 15px;
     color: var(--text-dark);
 }
-
 .section-subtitle {
     text-align: center;
     color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 50px;
 }
-
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
-
 .team-member {
     background: white;
     padding: 30px;
@@ -1940,11 +1887,9 @@ img {
     box-shadow: var(--card-shadow);
     transition: transform 0.3s ease;
 }
-
 .team-member:hover {
     transform: translateY(-10px);
 }
-
 .team-member img {
     width: 150px;
     height: 150px;
@@ -1952,25 +1897,21 @@ img {
     margin: 0 auto 20px;
     border: 4px solid var(--light-bg);
 }
-
 .team-member h3 {
     font-size: 1.3rem;
     margin-bottom: 5px;
     color: var(--text-dark);
 }
-
 .role {
     color: var(--text-muted);
     margin-bottom: 15px;
     display: block;
 }
-
 .social-links {
     display: flex;
     justify-content: center;
     gap: 15px;
 }
-
 .social-links a {
     width: 40px;
     height: 40px;
@@ -1982,36 +1923,29 @@ img {
     transition: 0.3s ease;
     color: var(--text-muted);
 }
-
 .social-links a:hover {
     background-color: var(--primary-color);
     color: white;
 }
-
-/* Values Section */
 .values-section {
     padding: 80px 0;
     background-color: white;
 }
-
 .values-section h2 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 50px;
     color: var(--text-dark);
 }
-
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
-
 .value-card {
     text-align: center;
     padding: 40px 30px;
 }
-
 .value-icon {
     width: 80px;
     height: 80px;
@@ -2022,64 +1956,52 @@ img {
     align-items: center;
     justify-content: center;
 }
-
 .value-icon i {
     font-size: 2rem;
     color: var(--primary-color);
 }
-
 .value-card h3 {
     font-size: 1.3rem;
     margin-bottom: 15px;
     color: var(--text-dark);
 }
-
 .value-card p {
     color: var(--text-muted);
     line-height: 1.7;
 }
-
-/* CTA Section */
 .cta-section {
     padding: 100px 0;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     text-align: center;
     color: white;
 }
-
 .cta-section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
-
 .cta-section p {
     font-size: 1.2rem;
     color: #94a3b8;
     margin-bottom: 30px;
 }
 
-/* Responsive for About Page */
 @media (max-width: 768px) {
     .mission-content {
         grid-template-columns: 1fr;
     }
-
     .timeline::before {
         left: 40px;
     }
-
     .timeline-year {
         width: 60px;
         height: 60px;
         font-size: 0.95rem;
     }
-
     .timeline-item {
         gap: 20px;
     }
 }
 
-/* Contact Section */
 .contact-section {
     padding: 80px 0;
     background-color: white;
@@ -2097,8 +2019,6 @@ img {
     margin-bottom: 30px;
     color: var(--text-dark);
 }
-
-/* Contact Form */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -2142,8 +2062,6 @@ img {
 .form-group textarea {
     resize: vertical;
 }
-
-/* Contact Info */
 .contact-info-items {
     display: flex;
     flex-direction: column;
@@ -2216,8 +2134,6 @@ img {
     color: white;
     transform: translateY(-3px);
 }
-
-/* FAQ Section */
 .faq-section {
     padding: 80px 0;
     background-color: var(--light-bg);
@@ -2289,8 +2205,6 @@ img {
     color: var(--text-muted);
     line-height: 1.7;
 }
-
-/* Responsive for Contact Page */
 @media (max-width: 992px) {
     .contact-layout {
         grid-template-columns: 1fr;
@@ -2302,8 +2216,6 @@ img {
         grid-template-columns: 1fr;
     }
 }
-
-/* Auth Section */
 .auth-section {
     min-height: 100vh;
     display: flex;
@@ -2471,8 +2383,6 @@ img {
 .terms-checkbox a {
     color: var(--primary-color);
 }
-
-/* Auth Info Panel */
 .auth-info {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     padding: 50px;
@@ -2505,7 +2415,6 @@ img {
     color: white;
 }
 
-/* Responsive for Auth */
 @media (max-width: 992px) {
     .auth-container {
         grid-template-columns: 1fr;
@@ -2530,8 +2439,6 @@ img {
         grid-template-columns: 1fr;
     }
 }
-
-/* Dashboard Header */
 .dashboard-header {
     padding: 120px 0 40px;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -2566,8 +2473,6 @@ img {
     color: #94a3b8;
     font-size: 1.1rem;
 }
-
-/* Dashboard Content */
 .dashboard-content {
     padding: 40px 0 80px;
     background-color: var(--light-bg);
@@ -2627,8 +2532,6 @@ img {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
-
-/* Dashboard Layout */
 .dashboard-layout {
     display: grid;
     grid-template-columns: 1fr 350px;
@@ -2664,8 +2567,6 @@ img {
 .view-all:hover {
     text-decoration: underline;
 }
-
-/* Continue Learning Card */
 .learning-card {
     background: white;
     border-radius: 15px;
@@ -2730,13 +2631,11 @@ img {
     transition: width 0.3s ease;
 }
 
-/* Dashboard Courses Grid */
 .dashboard-courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
 }
-
 .dashboard-course-card {
     background: white;
     border-radius: 15px;
@@ -2744,58 +2643,47 @@ img {
     box-shadow: var(--card-shadow);
     transition: transform 0.3s ease;
 }
-
 .dashboard-course-card:hover {
     transform: translateY(-5px);
 }
-
 .dashboard-course-card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
 }
-
 .dashboard-course-content {
     padding: 20px;
 }
-
 .dashboard-course-content h4 {
     font-size: 1.05rem;
     margin-bottom: 15px;
     color: var(--text-dark);
 }
-
 .progress-text {
     display: block;
     margin-top: 8px;
     font-size: 0.85rem;
     color: var(--text-muted);
 }
-
 .progress-text.completed {
     color: #1dd1a1;
     font-weight: 600;
 }
-
-/* Activity List */
 .activity-list {
     background: white;
     border-radius: 15px;
     padding: 25px;
     box-shadow: var(--card-shadow);
 }
-
 .activity-item {
     display: flex;
     gap: 20px;
     padding: 20px 0;
     border-bottom: 1px solid #f1f5f9;
 }
-
 .activity-item:last-child {
     border-bottom: none;
 }
-
 .activity-icon {
     width: 45px;
     height: 45px;
@@ -2806,24 +2694,19 @@ img {
     justify-content: center;
     flex-shrink: 0;
 }
-
 .activity-icon i {
     color: var(--primary-color);
     font-size: 1.2rem;
 }
-
 .activity-details h4 {
     font-size: 1rem;
     margin-bottom: 5px;
     color: var(--text-dark);
 }
-
 .activity-details p {
     font-size: 0.85rem;
     color: var(--text-muted);
 }
-
-/* Dashboard Sidebar */
 .sidebar-widget {
     background: white;
     padding: 25px;
@@ -2831,56 +2714,46 @@ img {
     box-shadow: var(--card-shadow);
     margin-bottom: 25px;
 }
-
 .sidebar-widget h3 {
     font-size: 1.2rem;
     margin-bottom: 20px;
     color: var(--text-dark);
 }
-
 .recommended-courses {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
 .recommended-course {
     display: flex;
     gap: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #f1f5f9;
 }
-
 .recommended-course:last-child {
     border-bottom: none;
     padding-bottom: 0;
 }
-
 .recommended-course img {
     width: 80px;
     height: 60px;
     border-radius: 8px;
     object-fit: cover;
 }
-
 .recommended-course h5 {
     font-size: 0.95rem;
     margin-bottom: 5px;
     color: var(--text-dark);
 }
-
 .recommended-course .price {
     color: var(--primary-color);
     font-weight: 600;
 }
-
-/* Achievements */
 .achievements {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
 .achievement {
     display: flex;
     gap: 15px;
@@ -2889,60 +2762,47 @@ img {
     background-color: var(--light-bg);
     border-radius: 10px;
 }
-
 .achievement i {
     font-size: 2rem;
     color: var(--accent-color);
 }
-
 .achievement h5 {
     font-size: 0.95rem;
     margin-bottom: 3px;
     color: var(--text-dark);
 }
-
 .achievement p {
     font-size: 0.85rem;
     color: var(--text-muted);
 }
-
-/* Responsive for Dashboard */
 @media (max-width: 992px) {
     .dashboard-layout {
         grid-template-columns: 1fr;
     }
-
     .welcome-section {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
-
     .user-welcome {
         flex-direction: column;
         text-align: center;
     }
 }
-/* Detailed Responsive Styles */
-
 @media (max-width: 1024px) {
     .container {
         max-width: 95%;
     }
-    
     .detail-layout {
         grid-template-columns: 1fr;
     }
-    
     .detail-sidebar {
         position: static;
         margin-top: 40px;
     }
-    
     .dashboard-container {
         grid-template-columns: 1fr;
     }
-    
     .dashboard-sidebar {
         position: static;
         width: 100%;
@@ -2951,40 +2811,30 @@ img {
 }
 
 @media (max-width: 768px) {
-    /* Global */
+   
     html {
         font-size: 15px; 
     }
-    
     .section-header h2 {
         font-size: 2rem;
     }
-
-    /* About Page */
     .about-section {
         flex-direction: column;
         padding: 60px 0;
     }
-    
     .about-image, .about-content {
         width: 100%;
-    }
-    
+    } 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-
-    /* Contact Page */
     .contact-container {
         grid-template-columns: 1fr;
     }
-    
     .contact-info-cards {
         grid-template-columns: 1fr;
     }
-
-    /* Login Page */
     .auth-container {
         flex-direction: column;
         width: 90%;
@@ -2992,7 +2842,6 @@ img {
         height: auto;
         min-height: 600px;
     }
-    
     .auth-panels {
         width: 100%;
         height: 40%;
@@ -3000,37 +2849,30 @@ img {
         left: 0;
         top: 0;
     }
-    
     .auth-forms {
         width: 100%;
         height: 60%;
     }
-    
     .panel {
         padding: 20px;
     }
-    
     .signin-signup {
         top: 5%;
         transform: translate(-50%, 0);
     }
 }
-
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 2rem;
     }
-    
     .stats-grid {
         grid-template-columns: 1fr;
     }
-    
     .course-tabs {
         overflow-x: auto;
         white-space: nowrap;
         padding-bottom: 10px;
     }
-    
     .tab-btn {
         padding: 10px 15px;
         font-size: 0.9rem;
