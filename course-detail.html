@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Web Development - LearnUp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">LearnUp</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn-primary">Get Started</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Course Header -->
+    <section class="course-detail-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="courses.html">Courses</a>
+                <span>/</span>
+                <span>Full Stack Web Development</span>
+            </div>
+            <div class="course-header-content">
+                <div class="course-info">
+                    <span class="category">Development</span>
+                    <h1>Full Stack Web Development Bootcamp 2024</h1>
+                    <p class="course-description">Master both frontend and backend development with HTML, CSS,
+                        JavaScript, React, Node.js, MongoDB, and more!</p>
+                    <div class="course-stats">
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (2,543 ratings)</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-user-friends"></i>
+                            <span>12,450 students</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-clock"></i>
+                            <span>45 hours</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-signal"></i>
+                            <span>All Levels</span>
+                        </div>
+                    </div>
+                    <div class="instructor-info">
+                        <img src="https://i.pravatar.cc/50?img=12" alt="Instructor">
+                        <div>
+                            <span class="instructor-label">Instructor</span>
+                            <span class="instructor-name">John Anderson</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <section class="course-detail-content">
+        <div class="container">
+            <div class="detail-layout">
+                <!-- Main Content -->
+                <div class="detail-main">
+                    <!-- Course Preview -->
+                    <div class="course-preview">
+                        <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            alt="Course Preview">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="course-tabs">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="curriculum">Curriculum</button>
+                        <button class="tab-btn" data-tab="instructor">Instructor</button>
+                        <button class="tab-btn" data-tab="reviews">Reviews</button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content active" id="overview">
+                        <h2>What You'll Learn</h2>
+                        <div class="learning-points">
+                            <div class="point">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Build full-stack web applications from scratch</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Master HTML, CSS, and modern JavaScript</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Create responsive designs with CSS Grid and Flexbox</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Build interactive UIs with React and Redux</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Develop RESTful APIs with Node.js and Express</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Work with MongoDB and Mongoose for databases</span>
+                            </div>
+                        </div>
+
+                        <h2>Requirements</h2>
+                        <ul class="requirements-list">
+                            <li>Basic computer knowledge and internet access</li>
+                            <li>No prior programming experience required</li>
+                            <li>Willingness to learn and practice coding</li>
+                        </ul>
+
+                        <h2>Description</h2>
+                        <div class="description-text">
+                            <p>Welcome to the most comprehensive Full Stack Web Development course! This course is
+                                designed to take you from a complete beginner to a professional web developer.</p>
+                            <p>You'll learn both frontend and backend technologies, giving you the complete skillset to
+                                build modern, scalable web applications.</p>
+                            <p>The course covers everything from HTML and CSS basics to advanced topics like React
+                                hooks, Node.js authentication, and database management.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="curriculum">
+                        <h2>Course Curriculum</h2>
+                        <div class="curriculum-sections">
+                            <!-- Section 1 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title">
+                                        <i class="fas fa-chevron-down"></i>
+                                        <h3>Section 1: Introduction to Web Development</h3>
+                                    </div>
+                                    <span class="section-info">6 lectures • 45min</span>
+                                </div>
+                                <div class="section-lessons">
+                                    <div class="lesson">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>Welcome to the Course</span>
+                                        <span class="duration">5:30</span>
+                                    </div>
+                                    <div class="lesson">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span>Setting Up Your Development Environment</span>
+                                        <span class="duration">12:45</span>
+                                    </div>
+                                    <div class="lesson">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>Course Resources</span>
+                                        <span class="duration">2:00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 2 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title">
+                                        <i class="fas fa-chevron-down"></i>
+                                        <h3>Section 2: HTML Fundamentals</h3>
+                                    </div>
+                                    <span class="section-info">12 lectures • 2hr 15min</span>
+                                </div>
+                            </div>
+
+                            <!-- Section 3 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title">
+                                        <i class="fas fa-chevron-down"></i>
+                                        <h3>Section 3: CSS Styling and Layouts</h3>
+                                    </div>
+                                    <span class="section-info">15 lectures • 3hr 30min</span>
+                                </div>
+                            </div>
+
+                            <!-- Section 4 -->
+                            <div class="curriculum-section">
+                                <div class="section-header">
+                                    <div class="section-title">
+                                        <i class="fas fa-chevron-down"></i>
+                                        <h3>Section 4: JavaScript Programming</h3>
+                                    </div>
+                                    <span class="section-info">25 lectures • 5hr 45min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="instructor">
+                        <h2>About the Instructor</h2>
+                        <div class="instructor-detail">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="John Anderson">
+                            <div class="instructor-bio">
+                                <h3>John Anderson</h3>
+                                <p class="instructor-title">Senior Full Stack Developer & Instructor</p>
+                                <div class="instructor-stats">
+                                    <div><i class="fas fa-star"></i> 4.8 Instructor Rating</div>
+                                    <div><i class="fas fa-certificate"></i> 15,000+ Students</div>
+                                    <div><i class="fas fa-play-circle"></i> 8 Courses</div>
+                                </div>
+                                <p class="bio-text">John is a passionate developer with over 10 years of experience
+                                    building web applications for startups and Fortune 500 companies. He loves teaching
+                                    and has helped thousands of students launch their careers in tech.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="reviews">
+                        <h2>Student Reviews</h2>
+                        <div class="reviews-summary">
+                            <div class="rating-overview">
+                                <div class="big-rating">4.9</div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div class="rating-count">2,543 ratings</div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <!-- Review 1 -->
+                            <div class="review">
+                                <div class="review-header">
+                                    <img src="https://i.pravatar.cc/50?img=33" alt="Student">
+                                    <div class="review-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <div class="review-meta">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="review-date">2 weeks ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="review-text">This course is absolutely fantastic! John explains complex
+                                    concepts in a very clear and understandable way. I went from zero knowledge to
+                                    building my first web app in just 3 months!</p>
+                            </div>
+
+                            <!-- Review 2 -->
+                            <div class="review">
+                                <div class="review-header">
+                                    <img src="https://i.pravatar.cc/50?img=15" alt="Student">
+                                    <div class="review-info">
+                                        <h4>Michael Chen</h4>
+                                        <div class="review-meta">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="review-date">1 month ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="review-text">Best investment I've made in my career. The projects are
+                                    practical and the support from the community is amazing. Highly recommended!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="detail-sidebar">
+                    <div class="enrollment-card">
+                        <div class="price-section">
+                            <div class="current-price">$49.99</div>
+                            <div class="original-price">$99.99</div>
+                            <div class="discount-tag">50% OFF</div>
+                        </div>
+                        <button class="enroll-btn">Enroll Now</button>
+                        <p class="money-back">30-Day Money-Back Guarantee</p>
+
+                        <div class="includes-section">
+                            <h4>This course includes:</h4>
+                            <ul class="includes-list">
+                                <li><i class="fas fa-video"></i> 45 hours on-demand video</li>
+                                <li><i class="fas fa-file-alt"></i> 15 articles</li>
+                                <li><i class="fas fa-download"></i> 50 downloadable resources</li>
+                                <li><i class="fas fa-infinity"></i> Full lifetime access</li>
+                                <li><i class="fas fa-mobile-alt"></i> Access on mobile and TV</li>
+                                <li><i class="fas fa-certificate"></i> Certificate of completion</li>
+                            </ul>
+                        </div>
+
+                        <div class="share-section">
+                            <h4>Share this course:</h4>
+                            <div class="share-buttons">
+                                <button><i class="fab fa-facebook"></i></button>
+                                <button><i class="fab fa-twitter"></i></button>
+                                <button><i class="fab fa-linkedin"></i></button>
+                                <button><i class="fas fa-link"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Courses -->
+    <section class="related-courses">
+        <div class="container">
+            <h2>Related Courses</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Python">
+                    </div>
+                    <div class="course-content">
+                        <span class="category">Development</span>
+                        <h3>Python Programming</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-user-friends"></i> 2.1k</span>
+                        </div>
+                        <div class="course-footer">
+                            <div class="price">$34.99</div>
+                            <a href="#" class="btn-outline">View Course</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>LearnUp</h3>
+                <p>Empowering learners worldwide with accessible and high-quality education.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: support@learnup.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 LearnUp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
