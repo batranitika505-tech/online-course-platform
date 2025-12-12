@@ -1,101 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Scroll Reveal Animation
-    const revealElements = document.querySelectorAll('.reveal');
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        root: null,
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // Hero Parallax Effect
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        heroSection.addEventListener('mousemove', (e) => {
-            const shapes = document.querySelectorAll('.shape');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-
-            shapes.forEach((shape, index) => {
-                const speed = (index + 1) * 20;
-                const xOffset = (window.innerWidth / 2 - e.clientX) / speed;
-                const yOffset = (window.innerHeight / 2 - e.clientY) / speed;
-
-                shape.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-            });
-        });
-    }
-
-    // 3D Tilt Effect
-    const tiltCards = document.querySelectorAll('.course-card, .feature-card, .team-member');
-
-    tiltCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = ((y - centerY) / centerY) * -10; // Max rotation deg
-            const rotateY = ((x - centerX) / centerX) * 10;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-
-            // Glow effect positioning
-            const glow = card.querySelector('.glow');
-            if (glow) {
-                glow.style.left = `${x}px`;
-                glow.style.top = `${y}px`;
-                glow.style.opacity = '1';
-            }
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-
-            const glow = card.querySelector('.glow');
-            if (glow) {
-                glow.style.opacity = '0';
-            }
-        });
-
-        // Add glow element if not exists
-        if (!card.querySelector('.glow')) {
-            const glow = document.createElement('div');
-            glow.className = 'glow';
-            card.appendChild(glow);
-        }
-    });
-
-    // Magnetic Button Effect
-    const magneticButtons = document.querySelectorAll('.btn-primary, .btn-secondary');
-
-    magneticButtons.forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            // Magnetic pull strength
-            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-        });
-
-        btn.addEventListener('mouseleave', () => {
-            btn.style.transform = 'translate(0px, 0px)';
-        });
-    });
-
     // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -103,109 +6,41 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-
-            // Animate hamburger icon
-            const icon = hamburger.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
         });
     }
 
-    // Smooth Scrolling for Anchor Links
+    // Smooth Scroll for Navigation Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                e.preventDefault();
-                navLinks.classList.remove('active'); // Close menu on click
-                // Reset hamburger icon
-                if (hamburger) {
-                    const icon = hamburger.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-
-                const headerOffset = 80; // Height of fixed header
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
                 });
+
+                // Close mobile menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
             }
         });
     });
 
-    // Fade In Animation on Scroll
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Only animate once
-            }
-        });
-    }, observerOptions);
-
-    // Select elements to animate
-    const sections = document.querySelectorAll('section, .hero-content, .hero-image, .course-card, .feature-card');
-    sections.forEach(section => {
-        section.classList.add('fade-in-section');
-        observer.observe(section);
-    });
-
-    // Navbar Background on Scroll
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // Tab Switching (for Course Detail page)
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetTab = button.getAttribute('data-tab');
-
-            // Remove active class from all buttons and contents
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-
-            // Add active class to clicked button and corresponding content
-            button.classList.add('active');
-            document.getElementById(targetTab).classList.add('active');
-        });
-    });
-
-    // FAQ Accordion (for Contact page)
+    // FAQs Accordion
     const faqItems = document.querySelectorAll('.faq-item');
 
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
 
         question.addEventListener('click', () => {
-            // Close all other items
+            // Close other items
             faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
                 }
             });
@@ -215,29 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Login/Register Toggle (for Login page)
-    const showRegister = document.getElementById('show-register');
-    const showLogin = document.getElementById('show-login');
-    const loginBox = document.getElementById('login-box');
-    const registerBox = document.getElementById('register-box');
-
-    if (showRegister) {
-        showRegister.addEventListener('click', (e) => {
-            e.preventDefault();
-            loginBox.classList.add('hidden');
-            registerBox.classList.remove('hidden');
-        });
-    }
-
-    if (showLogin) {
-        showLogin.addEventListener('click', (e) => {
-            e.preventDefault();
-            registerBox.classList.add('hidden');
-            loginBox.classList.remove('hidden');
-        });
-    }
-
-    // Contact Form Submission
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
