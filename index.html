@@ -22,6 +22,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.html" class="btn-primary">Get Started</a></li>
             </ul>
@@ -35,13 +36,15 @@
     <header id="home" class="hero">
         <div class="hero-background"></div>
         <div class="hero-overlay"></div>
+        <canvas id="particles"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
         <div class="hero-shapes">
             <div class="shape shape1"></div>
             <div class="shape shape2"></div>
             <div class="shape shape3"></div>
         </div>
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content reveal">
                 <div class="hero-badge">
                     <i class="fas fa-graduation-cap"></i>
                     <span>#1 Online Learning Platform</span>
@@ -101,7 +104,7 @@
     </header>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="features reveal">
         <div class="container">
             <div class="section-header">
                 <h2>Why Choose LearnUp?</h2>
@@ -134,7 +137,7 @@
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="courses">
+    <section id="courses" class="courses reveal">
         <div class="container">
             <div class="section-header">
                 <h2>Popular Courses</h2>
@@ -203,6 +206,65 @@
             </div>
             <div class="view-all-container">
                 <a href="#" class="btn-primary">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section id="instructors" class="instructors reveal" style="padding: 80px 0; background-color: var(--light-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Experts</h2>
+                <p>Learn from industry leaders with years of real-world experience.</p>
+            </div>
+
+            <div class="team-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                <!-- Instructor 1 -->
+                <div class="team-member"
+                    style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: var(--card-shadow);">
+                    <img src="https://i.pravatar.cc/300?img=11" alt="Instructor"
+                        style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+                    <h3 style="margin-bottom: 5px; color: var(--text-dark);">John Smith</h3>
+                    <p class="role" style="color: var(--primary-color); font-weight: 500; margin-bottom: 15px;">Senior
+                        Web Developer</p>
+                    <div class="social-links" style="display: flex; justify-content: center; gap: 15px;">
+                        <a href="#" style="color: var(--text-muted);"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--text-muted);"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Instructor 2 -->
+                <div class="team-member"
+                    style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: var(--card-shadow);">
+                    <img src="https://i.pravatar.cc/300?img=5" alt="Instructor"
+                        style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+                    <h3 style="margin-bottom: 5px; color: var(--text-dark);">Sarah Williams</h3>
+                    <p class="role" style="color: var(--primary-color); font-weight: 500; margin-bottom: 15px;">UI/UX
+                        Designer</p>
+                    <div class="social-links" style="display: flex; justify-content: center; gap: 15px;">
+                        <a href="#" style="color: var(--text-muted);"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--text-muted);"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+
+                <!-- Instructor 3 -->
+                <div class="team-member"
+                    style="text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: var(--card-shadow);">
+                    <img src="https://i.pravatar.cc/300?img=3" alt="Instructor"
+                        style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+                    <h3 style="margin-bottom: 5px; color: var(--text-dark);">Robert Brown</h3>
+                    <p class="role" style="color: var(--primary-color); font-weight: 500; margin-bottom: 15px;">Data
+                        Scientist</p>
+                    <div class="social-links" style="display: flex; justify-content: center; gap: 15px;">
+                        <a href="#" style="color: var(--text-muted);"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--text-muted);"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-all-container" style="text-align: center;">
+                <a href="instructors.html" class="btn-primary">View All Instructors</a>
             </div>
         </div>
     </section>
