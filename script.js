@@ -1,137 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-
-
-            const icon = hamburger.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
         });
     }
 
-
+    // Smooth Scroll for Navigation Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                e.preventDefault();
-                navLinks.classList.remove('active'); 
- 
-                if (hamburger) {
-                    const icon = hamburger.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-
-                const headerOffset = 80; 
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
                 });
+
+                // Close mobile menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
             }
         });
     });
 
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); 
-            }
-        });
-    }, observerOptions);
-
-
-    const sections = document.querySelectorAll('section, .hero-content, .hero-image, .course-card, .feature-card');
-    sections.forEach(section => {
-        section.classList.add('fade-in-section');
-        observer.observe(section);
-    });
-
-
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetTab = button.getAttribute('data-tab');
-
-
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-
-
-            button.classList.add('active');
-            document.getElementById(targetTab).classList.add('active');
-        });
-    });
+    // FAQs Accordion
     const faqItems = document.querySelectorAll('.faq-item');
 
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
 
         question.addEventListener('click', () => {
- 
+            // Close other items
             faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
                 }
             });
 
-
+            // Toggle current item
             item.classList.toggle('active');
         });
     });
-    const showRegister = document.getElementById('show-register');
-    const showLogin = document.getElementById('show-login');
-    const loginBox = document.getElementById('login-box');
-    const registerBox = document.getElementById('register-box');
-    if (showRegister) {
-        showRegister.addEventListener('click', (e) => {
-            e.preventDefault();
-            loginBox.classList.add('hidden');
-            registerBox.classList.remove('hidden');
-        });
-    }
-    if (showLogin) {
-        showLogin.addEventListener('click', (e) => {
-            e.preventDefault();
-            registerBox.classList.add('hidden');
-            loginBox.classList.remove('hidden');
-        });
-    }
+
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -140,6 +58,106 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
+
+    // Filter and Sorting Logic for Courses Page
+    const coursesGrid = document.querySelector('.all-courses-grid');
+    if (coursesGrid) {
+        const courseCards = Array.from(coursesGrid.querySelectorAll('.course-card'));
+        const sortSelect = document.querySelector('.sort-select');
+        const clearBtn = document.querySelector('.clear-filters');
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const rangeSlider = document.querySelector('.slider');
+        const resultsCountStr = document.querySelector('.results-count strong');
+
+        // Initial State
+        let currentFilters = {
+            category: [],
+            price: [],
+            rating: []
+        };
+
+        // Event Listeners
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                updateFilters();
+                filterCourses();
+            });
+        });
+
+        if (sortSelect) {
+            sortSelect.addEventListener('change', () => {
+                sortCourses();
+            });
+        }
+
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                checkboxes.forEach(cb => cb.checked = false);
+                currentFilters = { category: [], price: [], rating: [] };
+                filterCourses();
+            });
+        }
+
+        function updateFilters() {
+            currentFilters.category = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(cb => cb.value);
+            currentFilters.price = Array.from(document.querySelectorAll('input[name="price"]:checked')).map(cb => cb.value);
+            currentFilters.rating = Array.from(document.querySelectorAll('input[name="rating"]:checked')).map(cb => cb.value);
+        }
+
+        function filterCourses() {
+            let visibleCount = 0;
+
+            courseCards.forEach(card => {
+                const category = card.querySelector('.category').textContent.toLowerCase().replace(' ', '-');
+                // Mock price check (parsing text is brittle, usually done via data attributes)
+                const priceText = card.querySelector('.price').textContent;
+                const isFree = priceText.toLowerCase().includes('free');
+                const priceType = isFree ? 'free' : 'paid';
+
+                // Mock rating check
+                const ratingText = card.querySelector('.course-meta span').textContent;
+                const rating = parseFloat(ratingText);
+
+                const matchesCategory = currentFilters.category.length === 0 || currentFilters.category.some(c => category.includes(c));
+                const matchesPrice = currentFilters.price.length === 0 || currentFilters.price.includes(priceType);
+                const matchesRating = currentFilters.rating.length === 0 || currentFilters.rating.some(r => rating >= parseFloat(r));
+
+                if (matchesCategory && matchesPrice && matchesRating) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (resultsCountStr) resultsCountStr.textContent = visibleCount;
+        }
+
+        function sortCourses() {
+            const sortValue = sortSelect.value;
+            const currentCards = Array.from(coursesGrid.querySelectorAll('.course-card'));
+
+            currentCards.sort((a, b) => {
+                const priceA = parseFloat(a.querySelector('.price').textContent.replace('$', '')) || 0;
+                const priceB = parseFloat(b.querySelector('.price').textContent.replace('$', '')) || 0;
+
+                // Extract rating (very brittle without data attributes, assuming format "Icons 4.9")
+                const textA = a.querySelector('.course-meta').textContent;
+                const ratingA = parseFloat(textA.match(/(\d\.\d)/) ? textA.match(/(\d\.\d)/)[0] : 0);
+                const textB = b.querySelector('.course-meta').textContent;
+                const ratingB = parseFloat(textB.match(/(\d\.\d)/) ? textB.match(/(\d\.\d)/)[0] : 0);
+
+                if (sortValue === 'price-low') return priceA - priceB;
+                if (sortValue === 'price-high') return priceB - priceA;
+                if (sortValue === 'rating') return ratingB - ratingA;
+                return 0; // Default
+            });
+
+            currentCards.forEach(card => coursesGrid.appendChild(card));
+        }
+    }
+
+    // Auth Forms Submission
     const authForms = document.querySelectorAll('.auth-form');
     authForms.forEach(form => {
         form.addEventListener('submit', (e) => {
